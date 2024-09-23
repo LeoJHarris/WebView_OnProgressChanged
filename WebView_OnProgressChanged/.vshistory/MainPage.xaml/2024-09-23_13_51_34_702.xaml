@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WebView_OnProgressChanged.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sharedwebviews="clr-namespace:WebView_OnProgressChanged.Controls">
+    <StackLayout
+        Padding="16"
+        Spacing="16">
+        <StackLayout Spacing="14">
+            <sharedwebviews:SharedCustomWebViewHandler
+                x:Name="webViewHandler"
+                HeightRequest="200"
+                Source="https://www.google.com"
+                VerticalOptions="FillAndExpand" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Handler progress" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Source={x:Reference webViewHandler}, Path=Progress}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+        <StackLayout
+            HeightRequest="180"
+            Spacing="14">
+            <sharedwebviews:SharedCustomWebViewRenderer
+                x:Name="webViewRenderer"
+                HeightRequest="200"
+                Source="https://www.google.com"
+                VerticalOptions="FillAndExpand" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Renderer progress" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Source={x:Reference webViewRenderer}, Path=Progress}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

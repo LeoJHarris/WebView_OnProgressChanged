@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WebView_OnProgressChanged.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sharedwebviews="clr-namespace:WebView_OnProgressChanged.Controls">
+    <Grid RowDefinitions="5*, 5*">
+        <VerticalStackLayout Grid.Row="0">
+            <sharedwebviews:SharedCustomWebViewRenderer x:Name="webViewRenderer" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Handler progress" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Source={x:Reference webViewRenderer}, Path=Progress}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1">
+            <sharedwebviews:SharedCustomWebViewHandler x:Name="webViewHandler" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Handler progress" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Source={x:Reference webViewHandler}, Path=Progress}" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
