@@ -2,6 +2,7 @@
 using Android.Runtime;
 
 namespace WebView_OnProgressChanged;
+
 [Application]
 public class MainApplication : MauiApplication
 {

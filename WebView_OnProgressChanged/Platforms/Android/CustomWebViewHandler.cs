@@ -3,6 +3,7 @@ using Microsoft.Maui.Handlers;
 using WebView_OnProgressChanged.Controls;
 
 namespace WebView_OnProgressChanged.Platforms.Droid;
+
 public class CustomWebViewHandler : WebViewHandler
 {
     private SharedCustomWebViewHandler? Element => VirtualView as SharedCustomWebViewHandler;

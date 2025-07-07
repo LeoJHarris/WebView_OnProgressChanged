@@ -3,6 +3,7 @@ using Microsoft.Maui.Controls.Compatibility.Hosting;
 using WebView_OnProgressChanged.Controls;
 
 namespace WebView_OnProgressChanged;
+
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
